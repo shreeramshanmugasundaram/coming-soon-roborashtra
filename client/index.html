@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Roborashtra - Coming Soon</title>
+    <link rel="stylesheet" href="/style.css" />
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <script
+      src="https://kit.fontawesome.com/bc38d969a8.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="bg_circle"></div>
+      <div class="bg_circle"></div>
+
+      <!-- main content starts -->
+      <div class="main_content">
+        <img src="img/Roborashtra.webp" alt="roborashtra" />
+        <h1>Coming Soon</h1>
+        <!-- timer starts -->
+        <div class="timer">
+          <div class="timer_block">
+            <span class="timer_count" id="days">30</span>
+            <span class="eps">:</span>
+            <span class="timer_text">Days</span>
+          </div>
+
+          <div class="timer_block">
+            <span class="timer_count" id="hours">30</span>
+            <span class="eps">:</span>
+
+            <span class="timer_text">Hours</span>
+          </div>
+
+          <div class="timer_block">
+            <span class="timer_count" id="minutes">30</span>
+            <span class="eps">:</span>
+            <span class="timer_text">Minutes</span>
+          </div>
+          <!-- <div class="timer_block">
+            <span class="timer_count" id="seconds">30</span> :
+            <span class="timer_text">Seconds</span>
+          </div> -->
+        </div>
+        <!-- timer ends -->
+
+        <p>Get Updated When The Website Goes Live</p>
+
+        <!-- Subscribe starts -->
+        <form action="http://localhost:5000/api/subscribe" method="post">
+          <div>
+            <input
+              type="text"
+              name="email"
+              placeholder="ENTER YOUR MAIL ID HERE"
+              required="true"
+            />
+            <button type="submit">Subscribe</button>
+          </div>
+        </form>
+        <!-- Subscribe Ends -->
+        <p>
+          If you have any query, contact us at <br />
+          <span style="color: #79b7ff">roborashtra@pccoer.in</span>
+        </p>
+
+        <!-- social media -->
+        <div class="social_media">
+          <p style="color: #79b7ff">Follow us on</p>
+          <div>
+            <a href="http://www.linkedin.com/in/robo-hawk-510206293">
+              <i class="fa-brands fa-linkedin"></i>
+            </a>
+            <a href="https://twitter.com/robohawk_pccoer">
+              <i class="fa-brands fa-square-x-twitter"></i>
+            </a>
+            <a
+              href="https://www.instagram.com/robohawk.pccoer/?igshid=MzRlODBiNWFlZA=="
+            >
+              <i class="fa-brands fa-square-instagram"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+      <!-- main content ends -->
+    </div>
+
+    <script>
+      // Set the date we're counting down to
+      var countDownDate = new Date("Oct 22, 2023 15:37:25").getTime();
+
+      // Update the count down every 1 second
+      var x = setInterval(function () {
+        // Get today's date and time
+        var now = new Date().getTime();
+
+        // Find the distance between now and the count down date
+        var distance = countDownDate - now;
+
+        // Time calculations for days, hours, minutes and seconds
+        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        var hours = Math.floor(
+          (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+        );
+        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        // Display the result in the element with id="demo"
+        document.getElementById("days").innerHTML = days;
+        document.getElementById("hours").innerHTML = hours;
+        document.getElementById("minutes").innerHTML = minutes;
+        document.getElementById("seconds").innerHTML = seconds;
+
+        document.getElementById("demo").innerHTML =
+          days + "d " + hours + "h " + hours + "m " + seconds + "s ";
+
+        // If the count down is finished, write some text
+        if (distance < 0) {
+          clearInterval(x);
+          document.getElementById("demo").innerHTML = "EXPIRED";
+        }
+      }, 1000);
+    </script>
+  </body>
+</html>
