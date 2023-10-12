@@ -32,16 +32,14 @@ app.post("/api/subscribe", async (req, res) => {
     // check the existing email
     const existing = await EmailSchema.findOne({ email });
     if (existing) {
-      return res
-        .status(400)
-        .sendFile(`${__dirname}\\client\\alreadyexist.html`);
+      return res.status(400).sendFile(`${__dirname}/client/alreadyexist.html`);
     }
     // saving to database
     const result = await EmailSchema.create({
       email,
     });
     console.log("hi");
-    return res.status(201).sendFile(`${__dirname}\\client\\success.html`);
+    return res.status(201).sendFile(`${__dirname}/client/success.html`);
   } catch (error) {
     console.log(error);
 
